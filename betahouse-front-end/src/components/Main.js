@@ -5,12 +5,11 @@ class AppComponent extends React.Component {
     return (
       <div className="index">
         <h2> Hello world </h2>
+        {this.props.children}
       </div>
     );
   }
 }
 
-AppComponent.defaultProps = {
-};
-
 export default AppComponent;
+
