@@ -1,11 +1,36 @@
 import React from 'react';
+import PostStore from '../stores/PostStore';
+import PostsList from './PostsList';
+
+import PostActions from '../actions/PostActions';
 
 export default class Index extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      postsList: PostStore.getPosts()
+    }
+    this._onChange = this._onChange.bind(this);
+  }
+
+  componentDidMount() {
+    PostActions.getAllPosts();
+    PostStore.addChangeListener(this._onChange);
+  }
+
+  componentWillUnmount() {
+    PostStore.removeChangeListener(this._onChange);
+  }
+
+  _onChange() {
+    this.setState({
+      postsList: PostStore.getPosts()
+    });
+  }
+
   render() {
     return (
-      <div className="container">
-        <h2>List posts</h2>
-      </div>
+      <PostsList posts={this.state.postsList} />
     )
   }
 }
