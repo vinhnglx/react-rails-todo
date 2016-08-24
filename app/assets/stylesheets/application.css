@@ -19,7 +19,21 @@ body {
   padding-bottom: 20px;
 }
 
-.header {
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e5e5e5;
+form {
+  display: inline-block;
 }
+
+.form-group {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+#todo {
+  margin: 0 auto;
+  width: 500px;
+}
+
+a.close {
+  float: right;
+}
+
