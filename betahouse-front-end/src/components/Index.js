@@ -1,6 +1,7 @@
 import React from 'react';
 import PostStore from '../stores/PostStore';
 import PostsList from './PostsList';
+import PostForm from './PostForm';
 
 import PostActions from '../actions/PostActions';
 
@@ -30,7 +31,10 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <PostsList posts={this.state.postsList} />
+      <div>
+        <PostForm />
+        <PostsList posts={this.state.postsList} />
+      </div>
     )
   }
 }
