@@ -12,7 +12,7 @@ rake db:create db:migrate db:seed
 cd betahouse-front-end/
 npm install
 npm run dist
-npm copy_assets
+npm run copy_assets
 
 cd ../
 rails s
